@@ -13,4 +13,29 @@ import au.edu.swin.mobiledev.assignment03.myfit.data.db.relations.WorkoutWithExe
 @Dao
 interface ExerciseDao {
 
+    // Create
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertExercise(exercise: Exercise)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertExercises(exercises: List<Exercise>)
+
+    // Read
+    @Query("SELECT * FROM exercises ORDER BY name ASC")
+    fun getAllExercises(): LiveData<List<Exercise>>
+
+    @Query("SELECT * FROM exercises WHERE workoutId = :workoutId")
+    fun getExercisesForWorkout(workoutId: Int): LiveData<List<Exercise>>
+
+    @Query("SELECT * FROM exercises WHERE id = :id")
+    suspend fun getExerciseById(id: Int): Exercise?
+
+    // Update
+    suspend fun updateExercise(exercise: Exercise)
+
+    // Delete
+    suspend fun deleteExercise(exercise: Exercise)
+
+    @Query("DELETE FROM exercises WHERE workoutId = :workoutId")
+    suspend fun deleteExercisesByWorkout(workoutId: Int)
 }
