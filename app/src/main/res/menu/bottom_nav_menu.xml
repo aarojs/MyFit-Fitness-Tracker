@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home_icon"
+        android:title="@string/navHome"/>
+    <item
+        android:id="@+id/exerciseFragment"
+        android:icon="@drawable/exercise_icon"
+        android:title="@string/navExercises"/>
+    <item
+        android:id="@+id/workoutFragment"
+        android:icon="@drawable/cardio_icon"
+        android:title="@string/navWorkouts"/>
+    <item
+        android:id="@+id/progressFragment"
+        android:icon="@drawable/progress_icon"
+        android:title="@string/navProgress"/>
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/settings_icon"
+        android:title="@string/navSettings"/>
+
+
+
+
+</menu>

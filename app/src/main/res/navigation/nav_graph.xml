@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.home.HomeFragment"
+        android:label="Home"/>
+
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.exercise.ExerciseFragment"
+        android:label="Exercises"/>
+
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.workout.WorkoutFragment"
+        android:label="Workouts"/>
+
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.progress.ProgressFragment"
+        android:label="Progress"/>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.settings.SettingsFragment"
+        android:label="Settings"/>
+
+</navigation>
