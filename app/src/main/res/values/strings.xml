@@ -3,13 +3,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-<!--    Nav Bar Menu Titles-->
+    <!--    Nav Bar Menu Titles-->
     <string name="navHome">Home</string>
     <string name="navExercises">Exercises</string>
     <string name="navWorkouts">Workouts</string>
     <string name="navProgress">Progress</string>
     <string name="navSettings">Settings</string>
 
-<!--    Fragment Titles-->
+    <!--    Fragment Titles-->
 
 </resources>
