@@ -5,56 +5,60 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import au.edu.swin.mobiledev.assignment03.myfit.R
+import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.ProgressLog
+import au.edu.swin.mobiledev.assignment03.myfit.databinding.FragmentExerciseBinding
+import au.edu.swin.mobiledev.assignment03.myfit.databinding.FragmentProgressBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProgressFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProgressFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentProgressBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var viewModel: ProgressViewModel
+    private lateinit var adapter: ProgressLogAdapter
+
+    private var progressLogs = mutableListOf<ProgressLog>() // you might need this
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_progress, container, false)
+        _binding = FragmentProgressBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProgressFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProgressFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Initialise ViewModel
+        viewModel = ViewModelProvider(this)[ProgressViewModel::class.java]
+
+        // Initialise adapter with empty list and click handler
+        adapter = ProgressLogAdapter(mutableListOf()) {handleClick(it)}
+
+        // Setup recycle view
+        binding.progressRecycler.layoutManager = LinearLayoutManager(requireContext())
+        binding.progressRecycler.adapter = adapter
+
+        // Observe LiveData from ViewModel
+
+
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun handleClick(progressLog: ProgressLog) {
+
+    }
+
+
 }

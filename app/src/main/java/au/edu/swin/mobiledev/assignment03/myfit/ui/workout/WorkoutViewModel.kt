@@ -1,4 +1,6 @@
 package au.edu.swin.mobiledev.assignment03.myfit.ui.workout
 
-class WorkoutViewModel {
+import androidx.lifecycle.ViewModel
+
+class WorkoutViewModel : ViewModel() {
 }

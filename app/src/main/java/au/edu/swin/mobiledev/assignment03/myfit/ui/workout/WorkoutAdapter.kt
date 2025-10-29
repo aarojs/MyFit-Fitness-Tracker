@@ -8,35 +8,43 @@ import androidx.recyclerview.widget.RecyclerView
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Workout
+import au.edu.swin.mobiledev.assignment03.myfit.databinding.ItemWorkoutBinding
 
 class WorkoutAdapter (
     private val workouts: MutableList<Workout>,
     private val listener: (Workout) -> Unit) : RecyclerView.Adapter<WorkoutAdapter.ViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater
-            .inflate(R.layout.item_workout, parent, false) as View
-        return ViewHolder(view)
+    inner class ViewHolder(val binding: ItemWorkoutBinding)
+        : RecyclerView.ViewHolder(binding.root){
+        fun bind(workout: Workout){
+            binding.workoutName.text = workout.name
+            binding.workoutCategory.text = workout.category
+            binding.workoutDuration.text = workout.duration.toString()
+            binding.workoutDate.text = workout.dateCreated.toString()
+
+            binding.root.setOnClickListener {
+                listener(workout)
+            }
+
+        }
     }
 
-    override fun getItemCount() = workouts.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = ItemWorkoutBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ViewHolder(binding)
+    }
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val workout = workouts[position]
         holder.bind(workout)
     }
 
-
-    inner class ViewHolder(private val v: View) : RecyclerView.ViewHolder(v){
-        fun bind(workout: Workout){
-
-            v.setOnClickListener {
-                listener(workout)
-            }
-
-        }
-    }
+    override fun getItemCount() = workouts.size
 
     fun updateData(newData: List<Workout>) {
         workouts.clear()

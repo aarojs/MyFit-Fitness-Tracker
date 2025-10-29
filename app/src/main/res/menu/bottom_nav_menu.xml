@@ -3,23 +3,23 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/home_icon"
-        android:title="@string/navHome"/>
+        android:title="@string/nav_home"/>
     <item
         android:id="@+id/exerciseFragment"
         android:icon="@drawable/exercise_icon"
-        android:title="@string/navExercises"/>
+        android:title="@string/nav_exercises"/>
     <item
         android:id="@+id/workoutFragment"
         android:icon="@drawable/cardio_icon"
-        android:title="@string/navWorkouts"/>
+        android:title="@string/nav_workouts"/>
     <item
         android:id="@+id/progressFragment"
         android:icon="@drawable/progress_icon"
-        android:title="@string/navProgress"/>
+        android:title="@string/nav_progress"/>
     <item
         android:id="@+id/settingsFragment"
         android:icon="@drawable/settings_icon"
-        android:title="@string/navSettings"/>
+        android:title="@string/nav_settings"/>
 
 
 

@@ -7,36 +7,45 @@ import androidx.recyclerview.widget.RecyclerView
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.ProgressLog
+import au.edu.swin.mobiledev.assignment03.myfit.databinding.ItemProgressLogBinding
 import au.edu.swin.mobiledev.assignment03.myfit.ui.exercise.ExerciseAdapter
 
 class ProgressLogAdapter (
     private val progressLogs: MutableList<ProgressLog>,
     private val listener: (ProgressLog) -> Unit) : RecyclerView.Adapter<ProgressLogAdapter.ViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater
-            .inflate(R.layout.item_progress_log, parent, false) as View
-        return ViewHolder(view)
+    inner class ViewHolder(val binding: ItemProgressLogBinding)
+        : RecyclerView.ViewHolder(binding.root){
+
+        fun bind(progressLog: ProgressLog) {
+            //Bind views
+            binding.logDate.text = progressLog.date.toString()
+            binding.logDuration.text = progressLog.duration.toString()
+            binding.logNotes.text = progressLog.notes
+
+            binding.root.setOnClickListener {
+                listener(progressLog)
+            }
+        }
     }
 
-    override fun getItemCount() = progressLogs.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = ItemProgressLogBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ViewHolder(binding)
+    }
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val progressLog = progressLogs[position]
         holder.bind(progressLog)
     }
 
-    inner class ViewHolder(private val v: View) : RecyclerView.ViewHolder(v){
-        // Find views go here
-        fun bind(progressLog: ProgressLog) {
-            // Assign context to views here
+    override fun getItemCount() = progressLogs.size
 
-            v.setOnClickListener {
-                listener(progressLog)
-            }
-        }
-    }
 
     fun updateData(newData: List<ProgressLog>) {
         progressLogs.clear()
