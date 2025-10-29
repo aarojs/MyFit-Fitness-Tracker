@@ -5,6 +5,8 @@ import au.edu.swin.mobiledev.assignment03.myfit.data.db.dao.ExerciseDao
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
 
 class ExerciseRepository(private val exerciseDao: ExerciseDao) {
+
+
     val allExercises: LiveData<List<Exercise>> = exerciseDao.getAllExercises()
 
     fun getExercisesForWorkout(id: Int) = exerciseDao.getExercisesForWorkout(id)
