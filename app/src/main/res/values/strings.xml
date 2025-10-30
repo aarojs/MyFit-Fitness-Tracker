@@ -29,13 +29,24 @@
     <string name="workout_name">Workout Name: </string>
     <string name="workout_category">Workout Category: </string>
     <string name="add_workout">Add Workout</string>
+    <string name="start_workout">Start Workout</string>
+    <string name="workout_exercises">Exercises: </string>
 
     <string name="my_logs">My Progress Logs</string>
     <string name="log_notes">Notes: </string>
     <string name="add_log">Add Progress Log</string>
 
+
 <!--    Home Screen Text-->
     <string name="home_greeting">Welcome Back, lets get MyFit</string>
-    <string name="today_workout">Your workout for today is: </string>
+    <string name="today_workout">Today\'s workout </string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="timer">Timer</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="steps_hint">Enter Steps</string>
+    <string name="calories_hint">Enter KJ (Kilojoules) </string>
+    <string name="calculate">Calculate</string>
+    <string name="convert">Convert</string>
+    <string name="calorie_placeholder">0 kcal</string>
 
 </resources>

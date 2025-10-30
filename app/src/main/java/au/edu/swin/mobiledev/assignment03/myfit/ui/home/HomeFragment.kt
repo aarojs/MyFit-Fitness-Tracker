@@ -38,6 +38,13 @@ class HomeFragment : Fragment() {
 
 
         // Navigation shortcut listeners
+
+        // These create issues with the back stack navigating to fragments
+        // Make these do something else
+        // Maybe cards that show last workout / last exercise?
+        // Quick launch into something?
+        // Maybe timers can go here?
+        // Timers, calorie converter,
         binding.btnGoToWorkouts.setOnClickListener {
             findNavController().navigate(R.id.workoutFragment)
         }

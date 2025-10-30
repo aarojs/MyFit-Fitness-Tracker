@@ -15,7 +15,7 @@ import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
 
 @Database(
     entities = [Workout::class, Exercise::class, ProgressLog::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class MyFitDatabase: RoomDatabase() {
