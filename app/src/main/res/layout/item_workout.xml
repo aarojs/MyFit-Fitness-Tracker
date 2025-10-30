@@ -24,7 +24,7 @@
         android:id="@+id/workoutDuration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/log_duration"
+        android:text="@string/duration"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/workoutCategory"/>
 
@@ -32,7 +32,7 @@
         android:id="@+id/workoutDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/workout_date"
+        android:text="@string/date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/workoutDuration"/>
 

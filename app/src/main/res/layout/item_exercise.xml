@@ -24,7 +24,7 @@
         android:id="@+id/exerciseSets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/exercise_sets"
+        android:text="@string/sets"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/exerciseType"/>
 
@@ -32,7 +32,7 @@
         android:id="@+id/exerciseReps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/exercise_reps"
+        android:text="@string/reps"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/exerciseSets"/>
 

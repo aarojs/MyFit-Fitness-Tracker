@@ -2,6 +2,7 @@ package au.edu.swin.mobiledev.assignment03.myfit.data.db.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -35,6 +36,7 @@ interface ProgressLogDao {
 
 
     // Delete
+    @Delete
     suspend fun deleteProgressLog(log: ProgressLog)
 
     @Query("DELETE FROM progress_logs WHERE workoutId = :workoutId")

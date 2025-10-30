@@ -3,28 +3,33 @@
     <string name="placeholder">Example Text</string>
 
     <!--    Nav Bar Menu Titles-->
-    <string name="nav_home">Home</string>
-    <string name="nav_exercises">Exercises</string>
-    <string name="nav_workouts">Workouts</string>
-    <string name="nav_progress">Progress</string>
-    <string name="nav_settings">Settings</string>
+    <string name="home">Home</string>
+    <string name="exercises">Exercises</string>
+    <string name="workouts">Workouts</string>
+    <string name="progress">Progress</string>
+    <string name="settings">Settings</string>
 
-    <!--    Fragment Titles-->
+<!--    Reusable text-->
+    <string name="duration">Duration: </string>
+    <string name="sets">Sets: </string>
+    <string name="reps">Reps: </string>
+    <string name="date">Date: </string>
+    <string name="calories">Calories burned: </string>
+    <string name="steps">Steps: </string>
 
-    <!--    Entity Fields-->
+
+
+    <!--    Entity Specific Fields-->
     <string name="exercise_name">Exercise Name: </string>
     <string name="exercise_type">Exercise Type: </string>
-    <string name="exercise_sets">Sets: </string>
-    <string name="exercise_reps">Reps: </string>
-    
+
     <string name="workout_name">Workout Name: </string>
     <string name="workout_category">Workout Category: </string>
-    <string name="workout_duration">Duration: </string>
-    <string name="workout_date">Date: </string>
 
-<!--    you are repeating yourself, consolidate repeated strings and reuse -->
-    <string name="log_date">Log Date: </string>
-    <string name="log_duration">Duration: </string>
     <string name="log_notes">Notes: </string>
+
+<!--    Home Screen Text-->
+    <string name="home_greeting">Welcome Back, lets get MyFit</string>
+    <string name="today_workout">Your workout for today is: </string>
 
 </resources>

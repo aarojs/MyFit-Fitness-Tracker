@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/workoutRecycler"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/navWorkouts" />
+        android:text="@string/workouts" />
 
 
     <androidx.recyclerview.widget.RecyclerView
