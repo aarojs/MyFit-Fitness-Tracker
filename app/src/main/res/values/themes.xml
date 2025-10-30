@@ -1,8 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MyFit" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Primary colour -->
+        <item name="colorPrimary">@color/yellowAccent</item>
+        <item name="colorPrimaryVariant">@color/yellowAccentDark</item>
+        <item name="colorOnPrimary">@android:color/black</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@color/darkGreyBackground</item>
+
+        <!-- Secondary colours / accents -->
+        <item name="colorSecondary">@color/yellowAccent</item>
+        <item name="colorOnSecondary">@android:color/black</item>
+
+        <!-- Text colours -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/darker_gray</item>
+
     </style>
 
     <style name="Theme.MyFit" parent="Base.Theme.MyFit" />
