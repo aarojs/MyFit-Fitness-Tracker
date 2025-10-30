@@ -20,13 +20,19 @@
 
 
     <!--    Entity Specific Fields-->
+    <string name="my_exercises">My Exercises</string>
     <string name="exercise_name">Exercise Name: </string>
     <string name="exercise_type">Exercise Type: </string>
+    <string name="add_exercise">Add Exercise</string>
 
+    <string name="my_workouts">My Workouts</string>
     <string name="workout_name">Workout Name: </string>
     <string name="workout_category">Workout Category: </string>
+    <string name="add_workout">Add Workout</string>
 
+    <string name="my_logs">My Progress Logs</string>
     <string name="log_notes">Notes: </string>
+    <string name="add_log">Add Progress Log</string>
 
 <!--    Home Screen Text-->
     <string name="home_greeting">Welcome Back, lets get MyFit</string>
