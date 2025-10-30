@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     android:padding="@dimen/fragment_padding"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
     tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,7 +43,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Stats Card -->
+        <!-- Today's Workout Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/todayWorkoutCard"
             android:layout_width="0dp"
@@ -110,6 +113,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+<!--        Timer Card-->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/timerCard"
             android:layout_width="0dp"
@@ -152,6 +156,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
+<!--        Calorie converter card-->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/caloriesCard"
             android:layout_width="0dp"
@@ -214,6 +219,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
+<!--        Steps to calories converter card-->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/stepsCard"
             android:layout_width="0dp"
@@ -237,6 +243,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/steps_icon"
+                    android:contentDescription="@string/steps"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>

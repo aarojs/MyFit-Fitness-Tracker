@@ -48,5 +48,8 @@
     <string name="calculate">Calculate</string>
     <string name="convert">Convert</string>
     <string name="calorie_placeholder">0 kcal</string>
+    
+    <string name="workout_detail">Workout Detail</string>
+
 
 </resources>

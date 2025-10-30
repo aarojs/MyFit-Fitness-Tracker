@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.findNavController
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.databinding.FragmentHomeBinding
@@ -27,31 +29,49 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Pull Data From ViewModels
-        // Today's workout
-        // Calories burned (from progress log)
-        // Steps ?
-        binding.welcomeGreeting.text
-        binding.textTodayWorkout
-        binding.textCalories
-        binding.textSteps
+        val scrollView = binding.homeScrollView
 
+        // Ensuring scrollview sits above nav bar
+        view.post {
+            val bottomNav = requireActivity().findViewById<View>(R.id.bottom_nav)
+            val navHeight = bottomNav?.height ?: 0
 
-        // Navigation shortcut listeners
-
-        // These create issues with the back stack navigating to fragments
-        // Make these do something else
-        // Maybe cards that show last workout / last exercise?
-        // Quick launch into something?
-        // Maybe timers can go here?
-        // Timers, calorie converter,
-        binding.btnGoToWorkouts.setOnClickListener {
-            findNavController().navigate(R.id.workoutFragment)
+            scrollView.setPadding(
+                scrollView.paddingLeft,
+                scrollView.paddingTop,
+                scrollView.paddingRight,
+                navHeight + 32 // add extra space (in pixels) if needed
+            )
         }
 
-        binding.btnGoToProgress.setOnClickListener {
-            findNavController().navigate(R.id.progressFragment)
+        // Navigate to today's workout
+        // How to display today's workout though?
+        binding.startWorkoutBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_workoutDetailFragment)
         }
+
+        // Timer Card Fragment
+        binding.timerCard.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_timerFragment)
+        }
+
+        // KJ to calories converter
+        binding.calcKjButton.setOnClickListener {
+            val kj = binding.kjInput.text.toString().toDoubleOrNull() ?: 0.0
+            val kcal = kj / 4.184 // kj to calorie conversion
+            val calString = "${kcal.toInt()} kcal"
+            binding.kcalOutput.text = calString
+        }
+
+        // Steps to calories converter
+        binding.calcStepsButton.setOnClickListener {
+            val steps = binding.stepsInput.text.toString().toIntOrNull() ?: 0
+            val calories = steps * 0.04 // roughly 0.04 calories in a step
+            val calString = "${calories.toInt()} kcal"
+            binding.stepsCaloriesOutput.text = calString
+
+        }
+
 
     }
 

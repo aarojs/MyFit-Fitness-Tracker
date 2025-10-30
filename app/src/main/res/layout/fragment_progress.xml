@@ -14,7 +14,7 @@
         android:text="@string/my_logs"
         android:textSize="@dimen/text_size_h1"
         android:textColor="@color/yellowAccent"
-        android:paddingBottom="@dimen/card_margin"
+        android:padding="@dimen/card_margin"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

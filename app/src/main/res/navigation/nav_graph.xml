@@ -7,7 +7,14 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.home.HomeFragment"
-        android:label="Home"/>
+        android:label="Home">
+        <action
+            android:id="@+id/action_homeFragment_to_workoutDetailFragment"
+            app:destination="@id/workoutDetailFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_timerFragment"
+            app:destination="@id/timerFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/exerciseFragment"
@@ -20,6 +27,11 @@
         android:label="Workouts"/>
 
     <fragment
+        android:id="@+id/workoutDetailFragment"
+        android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.workout.WorkoutDetailFragment"
+        android:label="@string/workout_detail"/>
+
+    <fragment
         android:id="@+id/progressFragment"
         android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.progress.ProgressFragment"
         android:label="Progress"/>
@@ -28,5 +40,11 @@
         android:id="@+id/settingsFragment"
         android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.settings.SettingsFragment"
         android:label="Settings"/>
+
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.timer.TimerFragment"
+        android:label="@string/timer"/>
+
 
 </navigation>
