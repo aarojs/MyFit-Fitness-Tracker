@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,7 +20,8 @@ class ExerciseFragment : Fragment() {
     private var _binding: FragmentExerciseBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: ExerciseViewModel
+    // Access ViewModel
+    private val viewModel: ExerciseViewModel by viewModels()
     private lateinit var adapter: ExerciseAdapter
 
     private var exercises = mutableListOf<Exercise>() // you might need this idk
@@ -38,9 +40,6 @@ class ExerciseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialise ViewModel
-        viewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
-
         // Initialise adapter with empty list and click handler
         adapter = ExerciseAdapter(mutableListOf()) {handleClick(it)}
 
@@ -49,8 +48,9 @@ class ExerciseFragment : Fragment() {
         binding.exerciseRecycler.adapter = adapter
 
         // Observe LiveData from Viewmodel
-        // implement this when youve done viewmodels
-
+        viewModel.allExercises.observe(viewLifecycleOwner) { exercises ->
+            adapter.updateData(exercises)
+        }
     }
 
     override fun onDestroyView() {

@@ -45,6 +45,11 @@ class WorkoutFragment : Fragment() {
         // Setup recycle view
         binding.workoutRecycler.layoutManager = LinearLayoutManager(requireContext())
         binding.workoutRecycler.adapter = adapter
+
+        // Access ViewModel
+        viewModel.allWorkouts.observe(viewLifecycleOwner) { workouts ->
+            adapter.updateData(workouts)
+        }
     }
 
     override fun onDestroyView() {

@@ -47,6 +47,9 @@ class ProgressFragment : Fragment() {
         binding.progressRecycler.adapter = adapter
 
         // Observe LiveData from ViewModel
+        viewModel.allProgressLogs.observe(viewLifecycleOwner) { progressLogs ->
+            adapter.updateData(progressLogs)
+        }
 
 
     }
