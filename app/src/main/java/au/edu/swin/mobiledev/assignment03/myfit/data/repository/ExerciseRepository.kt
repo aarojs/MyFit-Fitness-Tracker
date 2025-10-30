@@ -1,10 +1,19 @@
 package au.edu.swin.mobiledev.assignment03.myfit.data.repository
 
+import android.app.Application
 import androidx.lifecycle.LiveData
+import au.edu.swin.mobiledev.assignment03.myfit.data.db.MyFitDatabase
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.dao.ExerciseDao
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
 
-class ExerciseRepository(private val exerciseDao: ExerciseDao) {
+class ExerciseRepository(application: Application) {
+
+    private val exerciseDao: ExerciseDao
+
+    init {
+        val db = MyFitDatabase.getDatabase(application)
+        exerciseDao = db.exerciseDao()
+    }
 
 
     val allExercises: LiveData<List<Exercise>> = exerciseDao.getAllExercises()
