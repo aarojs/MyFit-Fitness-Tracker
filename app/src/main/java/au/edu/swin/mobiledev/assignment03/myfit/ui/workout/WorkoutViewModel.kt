@@ -28,6 +28,12 @@ class WorkoutViewModel(application: Application) : AndroidViewModel(application)
         repository.insertWorkout(workout)
     }
 
+    fun insertWorkouts(workouts: List<Workout>) = viewModelScope.launch {
+        repository.insertWorkouts(workouts)
+    }
+
+
+
     fun update(workout: Workout) = viewModelScope.launch {
         repository.updateWorkout(workout)
     }

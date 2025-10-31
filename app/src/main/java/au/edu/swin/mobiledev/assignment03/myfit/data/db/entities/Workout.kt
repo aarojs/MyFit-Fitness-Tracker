@@ -7,9 +7,6 @@ import androidx.room.PrimaryKey
 data class Workout (
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-    val category: String,
+    val description: String,
     val duration: Int = 0, // minutes
-    val dateCreated: Long = System.currentTimeMillis(),
-    val caloriesBurned: Int = 0,
-    val steps: Int = 0
 )

@@ -19,16 +19,20 @@ interface WorkoutDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertWorkout(workout: Workout)
 
+    @Insert
+    suspend fun insertWorkouts(workouts: List<Workout>)
+
     // Insert multiple workouts?
 
     // Read queries
-    @Query("SELECT * FROM workouts ORDER BY dateCreated DESC")
+    @Query("SELECT * FROM workouts ORDER BY name DESC")
     fun getAllWorkouts(): LiveData<List<Workout>>
 
     // If user wants to search by ID?
     // This is useful for a database, does it make sense for a user?
     @Query("SELECT * FROM workouts where id = :id")
     suspend fun getWorkoutById(id: Int): Workout?
+
 
     // Fetch relations using transactions
     @Transaction

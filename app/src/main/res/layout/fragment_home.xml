@@ -74,13 +74,13 @@
                     android:textSize="@dimen/text_size_h3"/>
 
                 <TextView
-                    android:id="@+id/workoutCategory"
+                    android:id="@+id/workoutDesc"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/fragment_padding"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="@string/workout_category"
+                    android:text="@string/workout_desc"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/text_size_h3"/>
 

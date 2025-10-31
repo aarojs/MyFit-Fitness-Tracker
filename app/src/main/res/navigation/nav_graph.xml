@@ -24,12 +24,20 @@
     <fragment
         android:id="@+id/workoutFragment"
         android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.workout.WorkoutFragment"
-        android:label="Workouts"/>
+        android:label="Workouts">
+        <action
+            android:id="@+id/action_workoutFragment_to_workoutDetailFragment"
+            app:destination="@id/workoutDetailFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/workoutDetailFragment"
         android:name="au.edu.swin.mobiledev.assignment03.myfit.ui.workout.WorkoutDetailFragment"
-        android:label="@string/workout_detail"/>
+        android:label="@string/workout_detail">
+        <argument
+            android:name="workoutId"
+            app:argType="integer"/>
+    </fragment>
 
     <fragment
         android:id="@+id/progressFragment"

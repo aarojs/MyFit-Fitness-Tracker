@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.workout.WorkoutDetailFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Workout Title -->
     <TextView
+        android:id="@+id/workoutName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/placeholder" />
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/text_size_h2"
+        android:textStyle="bold"
+        android:text="@string/workout_name" />
 
-</FrameLayout>
+    <!-- Workout Description -->
+    <TextView
+        android:id="@+id/workoutDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/workoutName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/text_size_h2"
+        android:text="@string/workout_desc"
+        android:layout_marginBottom="@dimen/fragment_padding"/>
+
+    <!-- Exercises RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exerciseRecycler"
+        app:layout_constraintTop_toBottomOf="@id/workoutDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <!-- Complete Workout Button -->
+    <Button
+        android:id="@+id/btnCompleteWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/exerciseRecycler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/complete_workout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

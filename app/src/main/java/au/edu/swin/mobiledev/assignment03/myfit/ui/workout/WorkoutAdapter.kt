@@ -18,9 +18,8 @@ class WorkoutAdapter (
         : RecyclerView.ViewHolder(binding.root){
         fun bind(workout: Workout){
             binding.workoutName.text = workout.name
-            binding.workoutCategory.text = workout.category
+            binding.workoutDesc.text = workout.description
             binding.workoutDuration.text = workout.duration.toString()
-            binding.workoutDate.text = workout.dateCreated.toString()
 
             binding.root.setOnClickListener {
                 listener(workout)

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/fragment_padding"
+    android:layout_margin="@dimen/card_margin"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -13,10 +15,10 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/workoutCategory"
+        android:id="@+id/workoutDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/workout_category"
+        android:text="@string/workout_desc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/workoutName"/>
 
@@ -26,15 +28,7 @@
         android:layout_height="wrap_content"
         android:text="@string/duration"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/workoutCategory"/>
-
-    <TextView
-        android:id="@+id/workoutDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/workoutDuration"/>
+        app:layout_constraintTop_toBottomOf="@id/workoutDesc"/>
 
 
 

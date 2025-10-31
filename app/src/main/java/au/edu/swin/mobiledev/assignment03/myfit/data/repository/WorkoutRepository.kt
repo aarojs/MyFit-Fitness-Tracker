@@ -23,7 +23,10 @@ class WorkoutRepository(application: Application) {
 
     fun getWorkoutWithLogs(id: Int): LiveData<WorkoutWithLogs> = workoutDao.getWorkoutWithLogs(id)
 
+
     suspend fun insertWorkout(workout: Workout) = workoutDao.insertWorkout(workout)
+
+    suspend fun insertWorkouts(workouts: List<Workout>) = workoutDao.insertWorkouts(workouts)
 
     suspend fun updateWorkout(workout: Workout) = workoutDao.updateWorkout(workout)
 

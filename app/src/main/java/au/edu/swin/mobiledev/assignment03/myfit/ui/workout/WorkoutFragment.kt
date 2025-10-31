@@ -1,11 +1,13 @@
 package au.edu.swin.mobiledev.assignment03.myfit.ui.workout
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Workout
@@ -57,7 +59,10 @@ class WorkoutFragment : Fragment() {
     }
 
     private fun handleClick(workout: Workout){
-
+        Log.d("WORKOUT", "${workout.id} clicked")
+        val action = WorkoutFragmentDirections
+            .actionWorkoutFragmentToWorkoutDetailFragment(workout.id)
+        findNavController().navigate(action)
     }
 
 }

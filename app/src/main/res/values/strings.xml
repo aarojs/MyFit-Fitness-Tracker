@@ -27,10 +27,11 @@
 
     <string name="my_workouts">My Workouts</string>
     <string name="workout_name">Workout Name: </string>
-    <string name="workout_category">Workout Category: </string>
+    <string name="workout_desc">Workout Description: </string>
     <string name="add_workout">Add Workout</string>
     <string name="start_workout">Start Workout</string>
     <string name="workout_exercises">Exercises: </string>
+    <string name="complete_workout">Complete Workout</string>
 
     <string name="my_logs">My Progress Logs</string>
     <string name="log_notes">Notes: </string>
