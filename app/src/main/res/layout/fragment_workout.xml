@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.workout.WorkoutFragment">
+    tools:context=".ui.workout.WorkoutFragment"
+    android:layout_marginBottom="100dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/workoutTitle"
         android:layout_width="0dp"
@@ -38,7 +38,9 @@
         android:contentDescription="@string/add_workout"
         android:src="@drawable/add_icon"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/card_margin"/>
+        android:layout_margin="@dimen/card_margin"
+        android:layout_marginBottom="@dimen/fragment_padding"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

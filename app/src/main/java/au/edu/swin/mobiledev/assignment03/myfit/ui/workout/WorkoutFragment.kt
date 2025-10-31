@@ -52,6 +52,13 @@ class WorkoutFragment : Fragment() {
         viewModel.allWorkouts.observe(viewLifecycleOwner) { workouts ->
             adapter.updateData(workouts)
         }
+
+        // Add workout button
+        binding.addWorkoutFab.setOnClickListener {
+            val dialog = AddWorkoutDialogueFragment()
+            dialog.show(parentFragmentManager, "AddWorkoutDialog")
+
+        }
     }
 
     override fun onDestroyView() {

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
 import au.edu.swin.mobiledev.assignment03.myfit.databinding.FragmentExerciseBinding
+import au.edu.swin.mobiledev.assignment03.myfit.ui.workout.AddWorkoutDialogueFragment
 
 
 class ExerciseFragment : Fragment() {
@@ -50,6 +51,12 @@ class ExerciseFragment : Fragment() {
         // Observe LiveData from Viewmodel
         viewModel.allExercises.observe(viewLifecycleOwner) { exercises ->
             adapter.updateData(exercises)
+        }
+
+        // Add exercise button
+        binding.addExerciseFab.setOnClickListener {
+            val dialog = AddExerciseDialogueFragment()
+            dialog.show(parentFragmentManager, "AddExerciseDialog")
         }
     }
 

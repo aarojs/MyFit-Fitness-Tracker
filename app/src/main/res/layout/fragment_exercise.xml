@@ -37,6 +37,7 @@
         android:contentDescription="@string/add_exercise"
         android:src="@drawable/add_icon"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/card_margin"/>
 
