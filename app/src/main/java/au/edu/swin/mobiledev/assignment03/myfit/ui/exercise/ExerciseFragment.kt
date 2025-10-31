@@ -22,7 +22,7 @@ class ExerciseFragment : Fragment() {
     private val binding get() = _binding!!
 
     // Access ViewModel
-    private val viewModel: ExerciseViewModel by viewModels()
+    private lateinit var viewModel: ExerciseViewModel
     private lateinit var adapter: ExerciseAdapter
 
     private var exercises = mutableListOf<Exercise>() // you might need this idk
@@ -41,8 +41,12 @@ class ExerciseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Init viewmodel
+        viewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
+
         // Initialise adapter with empty list and click handler
         adapter = ExerciseAdapter(mutableListOf()) {handleClick(it)}
+
 
         // Setup Recycle View
         binding.exerciseRecycler.layoutManager = LinearLayoutManager(requireContext())

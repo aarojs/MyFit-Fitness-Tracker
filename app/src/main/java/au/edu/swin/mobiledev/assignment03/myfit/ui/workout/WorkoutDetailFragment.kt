@@ -11,6 +11,7 @@ import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
 import au.edu.swin.mobiledev.assignment03.myfit.databinding.FragmentWorkoutDetailBinding
 import au.edu.swin.mobiledev.assignment03.myfit.ui.exercise.ExerciseAdapter
+import au.edu.swin.mobiledev.assignment03.myfit.ui.progress.AddProgressLogDialogueFragment
 
 
 class WorkoutDetailFragment : Fragment() {
@@ -58,6 +59,16 @@ class WorkoutDetailFragment : Fragment() {
             // Use RecyclerView for exercises
             adapter.updateData(workoutWithExercises.exercises)
 
+        }
+
+        binding.btnCompleteWorkout.setOnClickListener {
+            // Send workout to progress log with a bundle
+            val dialog = AddProgressLogDialogueFragment().apply {
+                arguments = Bundle().apply {
+                    putInt("workoutId", workoutId)
+                }
+            }
+            dialog.show(parentFragmentManager, "AddProgressDialog")
         }
 
     }
