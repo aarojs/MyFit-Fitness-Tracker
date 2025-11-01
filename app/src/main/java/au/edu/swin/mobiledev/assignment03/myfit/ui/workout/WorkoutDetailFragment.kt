@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
@@ -69,6 +70,10 @@ class WorkoutDetailFragment : Fragment() {
                 }
             }
             dialog.show(parentFragmentManager, "AddProgressDialog")
+        }
+
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
         }
 
     }

@@ -6,29 +6,64 @@
     android:layout_margin="@dimen/card_margin"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/workoutName"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/workoutCard"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/workout_name"
+        android:layout_margin="@dimen/fragment_padding"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:backgroundTint="@color/cardBackground"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="4dp"
+        android:padding="@dimen/fragment_padding">
 
-    <TextView
-        android:id="@+id/workoutDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/workout_desc"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/workoutName"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fragment_padding">
 
-    <TextView
-        android:id="@+id/workoutDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/duration"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/workoutDesc"/>
+            <TextView
+                android:id="@+id/workoutName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/workout_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/workoutDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/workout_desc"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/workoutName"/>
+
+            <TextView
+                android:id="@+id/workoutDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/duration"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/workoutDesc"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
 
 
 
