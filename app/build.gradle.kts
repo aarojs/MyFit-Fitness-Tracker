@@ -57,7 +57,7 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     kapt(libs.room.compiler)
-
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
 
