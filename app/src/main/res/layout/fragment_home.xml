@@ -31,11 +31,11 @@
 
         <!-- Today’s workout -->
         <TextView
-            android:id="@+id/textTodayWorkout"
+            android:id="@+id/userProfileTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="@dimen/card_margin"
-            android:text="@string/today_workout"
+            android:text="@string/user_profile"
             android:textColor="@color/lightGreyText"
             android:textSize="@dimen/text_size_h2"
             android:layout_marginTop="@dimen/fragment_padding"
@@ -45,13 +45,13 @@
 
         <!-- Today's Workout Card -->
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/todayWorkoutCard"
+            android:id="@+id/userProfileCard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fragment_padding"
             app:cardCornerRadius="@dimen/card_corner_radius"
             android:backgroundTint="@color/cardBackground"
-            app:layout_constraintTop_toBottomOf="@id/textTodayWorkout"
+            app:layout_constraintTop_toBottomOf="@id/userProfileTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:elevation="4dp"
@@ -63,38 +63,52 @@
                 android:padding="@dimen/fragment_padding">
 
                 <TextView
-                    android:id="@+id/workoutName"
+                    android:id="@+id/userName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/fragment_padding"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@string/workout_name"
+                    android:text="@string/age_hint"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/text_size_h3"/>
 
                 <TextView
-                    android:id="@+id/workoutDesc"
+                    android:id="@+id/userWeight"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/fragment_padding"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:text="@string/workout_desc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userName"
+                    android:text="@string/weight_hint"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/text_size_h3"/>
 
-                <Button
-                    android:id="@+id/startWorkoutBtn"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/userGoalWeight"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/fragment_padding"
                     android:padding="@dimen/fragment_padding"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/workoutName"
-                    android:text="@string/start_workout"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/userWeight"
+                    android:text="@string/goal_weight_hint"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_h3"/>
+
+                <TextView
+                    android:id="@+id/userAge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/fragment_padding"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userGoalWeight"
+                    android:text="@string/age_hint"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_h3"/>
+
+
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -109,7 +123,7 @@
             android:textColor="@color/lightGreyText"
             android:textSize="@dimen/text_size_h2"
             android:layout_marginTop="@dimen/fragment_padding"
-            app:layout_constraintTop_toBottomOf="@id/todayWorkoutCard"
+            app:layout_constraintTop_toBottomOf="@id/userProfileCard"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

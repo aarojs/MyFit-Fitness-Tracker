@@ -42,7 +42,7 @@
 
     <!--    Home Screen Text-->
     <string name="home_greeting">Welcome Back, lets get MyFit</string>
-    <string name="today_workout">Today\'s workout </string>
+    <string name="user_profile">User Profile </string>
     <string name="quick_actions">Quick Actions</string>
     <string name="timer">Timer</string>
     <string name="start_timer">Start Timer</string>

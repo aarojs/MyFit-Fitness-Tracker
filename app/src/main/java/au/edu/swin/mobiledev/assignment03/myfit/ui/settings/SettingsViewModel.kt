@@ -17,10 +17,10 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
 
     val userSettings = dataStore.data.map { prefs ->
         mapOf(
-            "name" to (prefs[UserPreferencesKeys.PROFILE_NAME] ?: ""),
-            "weight" to (prefs[UserPreferencesKeys.WEIGHT] ?: 0f),
-            "goal_weight" to (prefs[UserPreferencesKeys.GOAL_WEIGHT] ?: 0f),
-            "age" to (prefs[UserPreferencesKeys.AGE] ?: 0)
+            "name" to (prefs[UserPreferencesKeys.PROFILE_NAME]),
+            "weight" to (prefs[UserPreferencesKeys.WEIGHT]),
+            "goal_weight" to (prefs[UserPreferencesKeys.GOAL_WEIGHT]),
+            "age" to (prefs[UserPreferencesKeys.AGE])
         )
     }.stateIn(viewModelScope, SharingStarted.Lazily, emptyMap())
 
