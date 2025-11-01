@@ -16,10 +16,13 @@
     <string name="date">Date: </string>
     <string name="calories">Calories burned: </string>
     <string name="steps">Steps: </string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="back">Back</string>
+    <string name="menu">Menu</string>
 
 
     <!--    Entity Specific Fields-->

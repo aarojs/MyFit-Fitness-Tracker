@@ -39,7 +39,10 @@ class WorkoutDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Init adapter
-        adapter = ExerciseAdapter(mutableListOf()) {}
+        adapter = ExerciseAdapter(mutableListOf(), object: ExerciseAdapter.ExerciseItemListener {
+            // Not used here
+            override fun onDelete(exercise: Exercise) {}
+        })
 
         // Setup recycle view
         binding.exerciseRecycler.layoutManager = LinearLayoutManager(requireContext())

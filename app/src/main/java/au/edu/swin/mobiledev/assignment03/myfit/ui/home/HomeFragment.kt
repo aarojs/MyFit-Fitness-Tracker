@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
         }
 
         // Timer Card Fragment
-        binding.timerCard.setOnClickListener {
+        binding.timerStartBtn.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_timerFragment)
         }
 

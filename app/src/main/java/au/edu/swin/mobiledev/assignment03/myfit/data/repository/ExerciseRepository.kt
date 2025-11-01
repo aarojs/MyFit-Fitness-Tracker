@@ -18,7 +18,6 @@ class ExerciseRepository(application: Application) {
 
     val allExercises: LiveData<List<Exercise>> = exerciseDao.getAllExercises()
 
-    fun getExercisesForWorkout(id: Int) = exerciseDao.getExercisesForWorkout(id)
 
     suspend fun insertExercise(exercise: Exercise) = exerciseDao.insertExercise(exercise)
 
@@ -26,4 +25,6 @@ class ExerciseRepository(application: Application) {
 
     suspend fun deleteExercise(exercise: Exercise) = exerciseDao.deleteExercise(exercise)
 
+    // Not Implemented in ViewModel
+    fun getExercisesForWorkout(id: Int) = exerciseDao.getExercisesForWorkout(id)
 }

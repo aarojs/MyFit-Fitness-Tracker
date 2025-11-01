@@ -3,10 +3,12 @@ package au.edu.swin.mobiledev.assignment03.myfit.ui.progress
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Exercise
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.ProgressLog
+import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Workout
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.relations.ProgressWithWorkout
 import au.edu.swin.mobiledev.assignment03.myfit.databinding.ItemProgressLogBinding
 import au.edu.swin.mobiledev.assignment03.myfit.ui.exercise.ExerciseAdapter
@@ -16,7 +18,12 @@ import java.util.Locale
 
 class ProgressLogAdapter (
     private val progressLogs: MutableList<ProgressWithWorkout>,
-    private val listener: (ProgressWithWorkout) -> Unit) : RecyclerView.Adapter<ProgressLogAdapter.ViewHolder>(){
+    private val listener: ProgressLogItemListener
+) : RecyclerView.Adapter<ProgressLogAdapter.ViewHolder>(){
+
+    interface ProgressLogItemListener {
+        fun onDelete(progressLog: ProgressWithWorkout)
+    }
 
     inner class ViewHolder(val binding: ItemProgressLogBinding)
         : RecyclerView.ViewHolder(binding.root){
@@ -25,15 +32,26 @@ class ProgressLogAdapter (
             //Bind views
             val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
             val formattedDate = dateFormat.format(Date(progressWithWorkout.progressLog.date))
-            val durationString = "${progressWithWorkout.progressLog.duration} mins"
+            val dateString = "Date: $formattedDate"
+            val durationString = "Completed Duration: ${progressWithWorkout.progressLog.duration} mins"
 
             binding.workoutName.text = progressWithWorkout.workout.name
-            binding.logDate.text = formattedDate.toString()
+            binding.logDate.text = dateString
             binding.logDuration.text = durationString
             binding.logNotes.text = progressWithWorkout.progressLog.notes
 
-            binding.root.setOnClickListener {
-                listener(progressWithWorkout)
+
+            binding.menuButton.setOnClickListener { view ->
+                val popup = PopupMenu(view.context, view)
+                popup.inflate(R.menu.item_menu)
+                popup.setOnMenuItemClickListener { menuItem ->
+                    when(menuItem.itemId) {
+                        R.id.action_delete -> listener.onDelete(progressWithWorkout)
+                        else -> false
+                    }
+                    true
+                }
+                popup.show()
             }
         }
     }

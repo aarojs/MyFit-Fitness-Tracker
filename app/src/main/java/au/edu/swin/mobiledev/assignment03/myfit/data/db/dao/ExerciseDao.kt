@@ -29,6 +29,7 @@ interface ExerciseDao {
     @Query("SELECT * FROM exercises WHERE workoutId = :workoutId")
     fun getExercisesForWorkout(workoutId: Int): LiveData<List<Exercise>>
 
+    // Not used in repository
     @Query("SELECT * FROM exercises WHERE id = :id")
     suspend fun getExerciseById(id: Int): Exercise?
 
@@ -40,6 +41,7 @@ interface ExerciseDao {
     @Delete
     suspend fun deleteExercise(exercise: Exercise)
 
+    // Not Used in Repository
     @Query("DELETE FROM exercises WHERE workoutId = :workoutId")
     suspend fun deleteExercisesByWorkout(workoutId: Int)
 }

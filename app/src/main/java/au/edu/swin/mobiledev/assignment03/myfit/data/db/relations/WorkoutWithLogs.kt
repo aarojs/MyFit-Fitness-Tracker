@@ -5,6 +5,9 @@ import androidx.room.Relation
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.ProgressLog
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Workout
 
+
+// This relation is not implemented in this version of my app
+// User could view specific progress logs containing a specified workout
 data class WorkoutWithLogs(
     @Embedded val workout: Workout,
     @Relation(
@@ -13,3 +16,4 @@ data class WorkoutWithLogs(
     )
     val logs: List<ProgressLog>
 )
+

@@ -39,7 +39,11 @@ class ProgressFragment : Fragment() {
         viewModel = ViewModelProvider(this)[ProgressViewModel::class.java]
 
         // Initialise adapter with empty list and click handler
-        adapter = ProgressLogAdapter(mutableListOf()) {handleClick(it)}
+        adapter = ProgressLogAdapter(mutableListOf(), object: ProgressLogAdapter.ProgressLogItemListener {
+            override fun onDelete(progressLog: ProgressWithWorkout) {
+                viewModel.delete(progressLog.progressLog)
+            }
+        })
 
         // Setup recycle view
         binding.progressRecycler.layoutManager = LinearLayoutManager(requireContext())
@@ -58,9 +62,6 @@ class ProgressFragment : Fragment() {
         _binding = null
     }
 
-    private fun handleClick(progressWithWorkout: ProgressWithWorkout) {
-
-    }
 
 
 }

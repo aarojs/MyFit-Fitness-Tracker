@@ -45,7 +45,12 @@ class ExerciseFragment : Fragment() {
         viewModel = ViewModelProvider(this)[ExerciseViewModel::class.java]
 
         // Initialise adapter with empty list and click handler
-        adapter = ExerciseAdapter(mutableListOf()) {handleClick(it)}
+        adapter = ExerciseAdapter(mutableListOf(), object: ExerciseAdapter.ExerciseItemListener {
+            override fun onDelete(exercise: Exercise) {
+                viewModel.delete(exercise)
+            }
+        })
+
 
 
         // Setup Recycle View
@@ -69,7 +74,4 @@ class ExerciseFragment : Fragment() {
         _binding = null
     }
 
-    private fun handleClick(exercise: Exercise){
-
-    }
 }

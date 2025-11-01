@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/add_workout"
         android:textSize="@dimen/text_size_h2"
+        android:textColor="@color/yellowAccent"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

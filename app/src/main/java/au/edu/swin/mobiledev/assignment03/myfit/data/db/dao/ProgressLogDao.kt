@@ -24,9 +24,11 @@ interface ProgressLogDao {
     @Query("SELECT * FROM progress_logs ORDER BY date DESC")
     fun getAllLogs(): LiveData<List<ProgressLog>>
 
+    // Not used in Repository
     @Query("SELECT * FROM progress_logs WHERE workoutId = :workoutId ORDER BY date DESC")
     fun getLogsForWorkout(workoutId: Int): LiveData<List<ProgressLog>>
 
+    // Not used in Repository
     @Query("SELECT * FROM progress_logs WHERE id = :id")
     suspend fun getLogById(id: Int): ProgressLog?
 

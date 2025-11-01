@@ -18,7 +18,16 @@
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:textColorSecondary">@android:color/darker_gray</item>
 
+        <item name="popupMenuStyle">@style/MyPopupMenu</item>
+
     </style>
 
     <style name="Theme.MyFit" parent="Base.Theme.MyFit" />
+
+    <style name="MyPopupMenu" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@color/darkGreyBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:itemBackground">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
 </resources>

@@ -16,10 +16,6 @@ class ProgressRepository(application: Application){
         progressLogDao = db.progressLogDao()
     }
 
-    val allLogs: LiveData<List<ProgressLog>> = progressLogDao.getAllLogs()
-
-    fun getLogsForWorkout(id: Int): LiveData<List<ProgressLog>> = progressLogDao.getLogsForWorkout(id)
-
     fun getProgressWithWorkout(): LiveData<List<ProgressWithWorkout>> {
         return progressLogDao.getProgressWithWorkout()
     }
@@ -30,5 +26,12 @@ class ProgressRepository(application: Application){
 
     suspend fun deleteProgressLog(progressLog: ProgressLog) = progressLogDao.deleteProgressLog(progressLog)
 
+
+    // Not Implemented in ViewModel
+    val allLogs: LiveData<List<ProgressLog>> = progressLogDao.getAllLogs()
+
+    fun getLogsForWorkout(id: Int): LiveData<List<ProgressLog>> = progressLogDao.getLogsForWorkout(id)
+
     suspend fun deleteLogsByWorkout(id: Int) = progressLogDao.deleteLogsByWorkout(id)
+
 }

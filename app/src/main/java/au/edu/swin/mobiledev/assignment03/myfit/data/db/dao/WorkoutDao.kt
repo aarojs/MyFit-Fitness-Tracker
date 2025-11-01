@@ -22,14 +22,12 @@ interface WorkoutDao {
     @Insert
     suspend fun insertWorkouts(workouts: List<Workout>)
 
-    // Insert multiple workouts?
 
     // Read queries
     @Query("SELECT * FROM workouts ORDER BY name DESC")
     fun getAllWorkouts(): LiveData<List<Workout>>
 
-    // If user wants to search by ID?
-    // This is useful for a database, does it make sense for a user?
+    // Not used in repository
     @Query("SELECT * FROM workouts where id = :id")
     suspend fun getWorkoutById(id: Int): Workout?
 
@@ -52,6 +50,7 @@ interface WorkoutDao {
     @Delete
     suspend fun deleteWorkout(workout: Workout)
 
+    // Not used in repository
     @Query("DELETE FROM workouts")
     suspend fun deleteAllWorkouts()
 

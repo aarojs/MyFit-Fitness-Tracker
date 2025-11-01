@@ -21,7 +21,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/home_greeting"
-            android:textColor="@color/white"
+            android:textColor="@color/yellowAccent"
             android:textSize="@dimen/text_size_h1"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
@@ -157,6 +157,7 @@
                     android:contentDescription="@string/timer" />
 
                 <Button
+                    android:id="@+id/timerStartBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@id/timer"

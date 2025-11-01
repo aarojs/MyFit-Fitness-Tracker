@@ -42,7 +42,18 @@ class WorkoutFragment : Fragment() {
         viewModel = ViewModelProvider(this)[WorkoutViewModel::class.java]
 
         // Init adapter
-        adapter = WorkoutAdapter(mutableListOf()) {handleClick(it)}
+        adapter = WorkoutAdapter(mutableListOf(), object: WorkoutAdapter.WorkoutItemListener {
+            override fun onClick(workout: Workout) {
+                val action = WorkoutFragmentDirections
+                    .actionWorkoutFragmentToWorkoutDetailFragment(workout.id)
+                findNavController().navigate(action)
+            }
+
+            override fun onDelete(workout: Workout) {
+                viewModel.delete(workout)
+            }
+        })
+
 
         // Setup recycle view
         binding.workoutRecycler.layoutManager = LinearLayoutManager(requireContext())
@@ -67,9 +78,7 @@ class WorkoutFragment : Fragment() {
 
     private fun handleClick(workout: Workout){
         Log.d("WORKOUT", "${workout.id} clicked")
-        val action = WorkoutFragmentDirections
-            .actionWorkoutFragmentToWorkoutDetailFragment(workout.id)
-        findNavController().navigate(action)
+
     }
 
 }
