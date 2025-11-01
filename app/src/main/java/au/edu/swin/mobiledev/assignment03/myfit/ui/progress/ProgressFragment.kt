@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.ProgressLog
+import au.edu.swin.mobiledev.assignment03.myfit.data.db.relations.ProgressWithWorkout
 import au.edu.swin.mobiledev.assignment03.myfit.databinding.FragmentExerciseBinding
 import au.edu.swin.mobiledev.assignment03.myfit.databinding.FragmentProgressBinding
 
@@ -20,8 +21,6 @@ class ProgressFragment : Fragment() {
 
     private lateinit var viewModel: ProgressViewModel
     private lateinit var adapter: ProgressLogAdapter
-
-    private var progressLogs = mutableListOf<ProgressLog>() // you might need this
 
 
     override fun onCreateView(
@@ -47,7 +46,7 @@ class ProgressFragment : Fragment() {
         binding.progressRecycler.adapter = adapter
 
         // Observe LiveData from ViewModel
-        viewModel.allProgressLogs.observe(viewLifecycleOwner) { progressLogs ->
+        viewModel.allLogsWithWorkout.observe(viewLifecycleOwner) { progressLogs ->
             adapter.updateData(progressLogs)
         }
 
@@ -59,7 +58,7 @@ class ProgressFragment : Fragment() {
         _binding = null
     }
 
-    private fun handleClick(progressLog: ProgressLog) {
+    private fun handleClick(progressWithWorkout: ProgressWithWorkout) {
 
     }
 

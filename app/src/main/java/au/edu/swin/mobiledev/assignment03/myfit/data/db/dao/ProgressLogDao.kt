@@ -10,6 +10,7 @@ import androidx.room.Transaction
 import androidx.room.Update
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.ProgressLog
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.Workout
+import au.edu.swin.mobiledev.assignment03.myfit.data.db.relations.ProgressWithWorkout
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.relations.WorkoutWithExercises
 
 @Dao
@@ -29,6 +30,9 @@ interface ProgressLogDao {
     @Query("SELECT * FROM progress_logs WHERE id = :id")
     suspend fun getLogById(id: Int): ProgressLog?
 
+    @Transaction
+    @Query("SELECT * FROM progress_logs ORDER BY date DESC")
+    fun getProgressWithWorkout(): LiveData<List<ProgressWithWorkout>>
 
     // Update
     @Update

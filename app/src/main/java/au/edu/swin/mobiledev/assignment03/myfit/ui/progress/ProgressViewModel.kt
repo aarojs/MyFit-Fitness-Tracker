@@ -6,13 +6,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.ProgressLog
+import au.edu.swin.mobiledev.assignment03.myfit.data.db.relations.ProgressWithWorkout
 import au.edu.swin.mobiledev.assignment03.myfit.data.repository.ProgressRepository
 import kotlinx.coroutines.launch
 
 class ProgressViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = ProgressRepository(application)
-    val allProgressLogs: LiveData<List<ProgressLog>> = repository.allLogs
+    val allLogsWithWorkout: LiveData<List<ProgressWithWorkout>> = repository.getProgressWithWorkout()
 
     fun getLogsForWorkout(id: Int): LiveData<List<ProgressLog>> {
         return repository.getLogsForWorkout((id))

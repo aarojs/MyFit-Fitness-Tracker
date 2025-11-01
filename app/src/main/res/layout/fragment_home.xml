@@ -156,14 +156,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:contentDescription="@string/timer" />
 
-                <TextView
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@id/timer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="@string/start_timer"
-                    android:textColor="@color/white"
+                    android:text="@string/open_timer"
                     android:padding="@dimen/card_margin"
                     android:textSize="@dimen/text_size_h2"/>
 

@@ -19,6 +19,7 @@
 
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
 
 
     <!--    Entity Specific Fields-->
@@ -44,8 +45,6 @@
     <string name="home_greeting">Welcome Back, lets get MyFit</string>
     <string name="user_profile">User Profile </string>
     <string name="quick_actions">Quick Actions</string>
-    <string name="timer">Timer</string>
-    <string name="start_timer">Start Timer</string>
     <string name="steps_hint">Enter Steps</string>
     <string name="calories_hint">Enter KJ (Kilojoules) </string>
     <string name="calculate">Calculate</string>
@@ -60,5 +59,12 @@
     <string name="goal_weight_hint">Enter goal Weight (kg) </string>
     <string name="age_hint">Enter Age</string>
 
+<!--    Timer-->
+    <string name="open_timer">Open Timer</string>
+    <string name="timer">Timer</string>
+    <string name="timer_text">00:00</string>
+    <string name="start_timer">Start</string>
+    <string name="pause_timer">Pause</string>
+    <string name="reset_timer">Reset</string>
 
 </resources>
