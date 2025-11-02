@@ -36,11 +36,13 @@ class SettingsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.userSettings.collectLatest { settings ->
 
+                // Retrieve user profile
                 val name = settings["name"] as? String
                 val weight = settings["weight"] as? Float
                 val goalWeight = settings["goal_weight"] as? Float
                 val age = settings["age"] as? Int
 
+                // Show text hint if nothing is entered yet
                 if (!name.isNullOrEmpty()) binding.profileName.setText(name)
                 if (weight != null && weight != 0f) binding.profileWeight.setText(weight.toString())
                 if (goalWeight != null && goalWeight != 0f) binding.profileGoalWeight.setText(goalWeight.toString())
@@ -48,6 +50,7 @@ class SettingsFragment : Fragment() {
             }
         }
 
+        // bind new entered information to views
         binding.settingsSaveBtn.setOnClickListener {
             val name = binding.profileName.text.toString()
             val weight = binding.profileWeight.text.toString().toFloatOrNull() ?: 0f

@@ -25,8 +25,6 @@ class ExerciseFragment : Fragment() {
     private lateinit var viewModel: ExerciseViewModel
     private lateinit var adapter: ExerciseAdapter
 
-    private var exercises = mutableListOf<Exercise>() // you might need this idk
-
 
     override fun onCreateView(
         inflater: LayoutInflater,

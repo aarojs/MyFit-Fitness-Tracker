@@ -45,7 +45,7 @@ class AddProgressLogDialogueFragment : DialogFragment() {
             val log = ProgressLog(
                 workoutId = workoutId,
                 duration = duration,
-                notes = if (notes.isBlank()) null else notes
+                notes = notes.ifBlank { null }
             )
 
             progressLogViewModel.insert(log)

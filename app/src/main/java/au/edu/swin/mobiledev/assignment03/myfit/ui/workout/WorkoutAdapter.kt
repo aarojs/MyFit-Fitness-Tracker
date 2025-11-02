@@ -16,6 +16,7 @@ class WorkoutAdapter (
     private val listener: WorkoutItemListener
 ) : RecyclerView.Adapter<WorkoutAdapter.ViewHolder>(){
 
+    // Listener interface for menu item
         interface WorkoutItemListener {
             fun onClick(workout: Workout)
             fun onDelete(workout: Workout)

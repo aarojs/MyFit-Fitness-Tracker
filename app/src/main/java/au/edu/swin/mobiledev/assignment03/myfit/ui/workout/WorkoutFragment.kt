@@ -21,9 +21,6 @@ class WorkoutFragment : Fragment() {
     private lateinit var viewModel: WorkoutViewModel
     private lateinit var adapter: WorkoutAdapter
 
-    private var workouts = mutableListOf<Workout>()
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,11 +71,8 @@ class WorkoutFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        _binding = null
     }
 
-    private fun handleClick(workout: Workout){
-        Log.d("WORKOUT", "${workout.id} clicked")
-
-    }
 
 }

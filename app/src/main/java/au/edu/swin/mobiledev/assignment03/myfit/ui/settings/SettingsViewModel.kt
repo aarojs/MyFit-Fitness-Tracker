@@ -15,6 +15,7 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
 
     private val dataStore = application.dataStore
 
+    // using DataStore to mpa to user preferences
     val userSettings = dataStore.data.map { prefs ->
         mapOf(
             "name" to (prefs[UserPreferencesKeys.PROFILE_NAME]),

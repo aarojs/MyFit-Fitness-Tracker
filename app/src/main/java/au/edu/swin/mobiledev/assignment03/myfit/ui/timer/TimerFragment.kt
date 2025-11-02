@@ -22,6 +22,7 @@ class TimerFragment : Fragment() {
     private var isRunning = false
     private var elapsedTime = 0L // in milliseconds
     private var startTime = 0L
+    // Using Coroutine job for timer functionality
     private var timerJob: Job? = null
 
     override fun onCreateView(
@@ -68,12 +69,12 @@ class TimerFragment : Fragment() {
 
     private fun pauseTimer() {
         isRunning = false
-        timerJob?.cancel()
+        timerJob?.cancel() // cancel job if paused
     }
 
     private fun resetTimer() {
         isRunning = false
-        timerJob?.cancel()
+        timerJob?.cancel() // cancel job if reset
         elapsedTime = 0L
         updateTimerText()
     }

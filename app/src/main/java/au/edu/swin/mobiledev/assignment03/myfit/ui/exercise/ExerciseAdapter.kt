@@ -16,6 +16,7 @@ class ExerciseAdapter (
     private val listener: ExerciseItemListener
 ) : RecyclerView.Adapter<ExerciseAdapter.ViewHolder>(){
 
+    // interface listener for menu item
     interface ExerciseItemListener {
         fun onDelete(exercise: Exercise)
     }
@@ -33,6 +34,7 @@ class ExerciseAdapter (
             binding.exerciseReps.text = repsString
 
 
+            // Recycler item menu popup button
             binding.menuButton.setOnClickListener { view ->
                 val popup = PopupMenu(view.context, view)
                 popup.inflate(R.menu.item_menu)

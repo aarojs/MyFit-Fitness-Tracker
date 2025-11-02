@@ -17,10 +17,12 @@ import java.util.Date
 import java.util.Locale
 
 class ProgressLogAdapter (
+    // As logs are tied to a workout, the relation data class ProgressWithWorkout is used
     private val progressLogs: MutableList<ProgressWithWorkout>,
     private val listener: ProgressLogItemListener
 ) : RecyclerView.Adapter<ProgressLogAdapter.ViewHolder>(){
 
+    // Listener for menu item
     interface ProgressLogItemListener {
         fun onDelete(progressLog: ProgressWithWorkout)
     }
@@ -41,6 +43,7 @@ class ProgressLogAdapter (
             binding.logNotes.text = progressWithWorkout.progressLog.notes
 
 
+            // Popup menu
             binding.menuButton.setOnClickListener { view ->
                 val popup = PopupMenu(view.context, view)
                 popup.inflate(R.menu.item_menu)
