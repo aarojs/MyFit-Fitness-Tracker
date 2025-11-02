@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import au.edu.swin.mobiledev.assignment03.myfit.R
 import au.edu.swin.mobiledev.assignment03.myfit.data.db.entities.ProgressLog
 import au.edu.swin.mobiledev.assignment03.myfit.databinding.FragmentAddProgressLogDialogueBinding
@@ -50,6 +51,7 @@ class AddProgressLogDialogueFragment : DialogFragment() {
 
             progressLogViewModel.insert(log)
             dismiss()
+            findNavController().popBackStack()
         }
     }
 

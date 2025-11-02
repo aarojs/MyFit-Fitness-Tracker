@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
                 scrollView.paddingLeft,
                 scrollView.paddingTop,
                 scrollView.paddingRight,
-                navHeight + 32 // add extra space (in pixels) if needed
+                navHeight + 32 // update here if more space needed
             )
         }
 
