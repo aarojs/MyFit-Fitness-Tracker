@@ -60,6 +60,7 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.1.1")
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
+    debugImplementation("androidx.fragment:fragment-testing:1.8.9")
 
 
 }
