@@ -13,3 +13,22 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Gradle wrapper jar (should be excluded)
+gradle/wrapper/gradle-wrapper.jar
+
+# Keystore files — critical, never commit these
+*.jks
+*.keystore
+
+# Generated files
+*.class
+
+# Environment / secrets
+.env
+.env.*
+secrets.properties
+
+# OS files
+Thumbs.db
+Desktop.ini
